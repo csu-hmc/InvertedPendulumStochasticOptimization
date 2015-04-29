@@ -47,14 +47,14 @@ for j = 1:NSU
     c(ic(end)+1) = u1;
     c(ic(end)+2) = x1(1)*x1(3)-pi/2;
     
-%     % Constraints for input -> should be the same each cycle
-%     for i = 1:NperSU
-%         if j~= NSU
-%             c(ic(end)+2+i) = u1 - X(iu+nvarsperSU);   
-%         end
-%     end
+    % Constraints for input -> should be the same each cycle
+    for i = 1:NperSU
+        if j~= NSU
+            c(ic(end)+2+i) = u1 - X(iu+nvarsperSU);   
+        end
+    end
     ix = ix+nvarpernode;
     iu = iu+nvarpernode;
-    ic = ic+nstates+2;%+nvarsperSU; 
+    ic = ic+nstates+2+nvarsperSU; 
 end
 

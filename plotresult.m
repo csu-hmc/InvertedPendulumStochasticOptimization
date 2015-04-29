@@ -19,4 +19,4 @@ plot(meanu)
 figure
 plot(meanx(4,:));
 figure
-plot(meanx(3,:));
+plot(meanx(3,:).*meanx(1,:)-pi/2);

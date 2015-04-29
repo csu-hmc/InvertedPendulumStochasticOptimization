@@ -1,8 +1,8 @@
 function [X, L, U] = getIniConBound(params)
 
 % Bounds on x and u for each node
-Lpernode = [-pi;-8;-2*pi;-100;-1/2*params.m*params.g*params.l];
-Upernode = [pi;10;2*pi;100;1/2*params.m*params.g*params.l];
+Lpernode = [-pi;-10;-6;-100;-1/2*params.m*params.g*params.l];
+Upernode = [pi;10;6;100;1/2*params.m*params.g*params.l];
 
 LperSU = [];
 UperSU = [];

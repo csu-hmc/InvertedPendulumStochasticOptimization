@@ -61,7 +61,7 @@ for j = 1:NSU
 %             J(ic(end)+2+i,iu1+nvarsperSU) = -1;
 %         end
 %     end
-    ix1 = ix1+nvarpernode;
-    iu1 = iu1+nvarpernode;
+    ix = ix+nvarpernode;
+    iu = iu+nvarpernode;
     ic = ic+nstates+2;%+nvarsperSU;
 end
