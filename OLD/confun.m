@@ -5,6 +5,7 @@ NperSU = params.NperSU;
 NSU = params.NSU;
 nstates = params.nstates;
 ncontrols = params.ncontrols;
+nvarperSU = params.nvarperSU;
 h = params.h;
 
 ix = 1:nstates;
@@ -21,7 +22,7 @@ for j = 1:NSU
     x1 = X(ix);
     u1 = X(iu);
     
-    c(ic) = [x1(1); x1(2); x1(3)-1; x(4)-10];
+    c(ic) = [x1(1); x1(2); x1(3)-1; x1(4)-10];
     c(ic(end)+1) = u1;
     ic = ic+nstates+1;
     % Dynamics should match next node till one before last node
@@ -33,7 +34,7 @@ for j = 1:NSU
       
         omega = params.omega(:,NperSU*(j-1)+i);
         c(ic) = StocDyn((x1+x2)/2,(x2-x1)/h,(u1+u2)/2, omega, params);
-        
+         
         ix = ix+nvarpernode;
         iu = iu+nvarpernode;
         ic = ic+nstates;
@@ -42,11 +43,18 @@ for j = 1:NSU
     %Last node should have pi/2 and zero and ?? and zero input?
     x1 = X(ix);
     u1 = X(iu);
-    c(ic) = [0;0;0;0];% [x1(1)-pi/2;x1(2);0;0];
+    c(ic) = [x1(1)-pi/2;x1(2);0;0]; %[0;0;0;0];% 
     c(ic(end)+1) = u1;
+    c(ic(end)+2) = x1(1)*x1(3)-pi/2;
     
+    % Constraints for input -> should be the same each cycle
+    for i = 1:NperSU
+        if j~= NSU
+            c(ic(end)+2+i) = u1 - X(iu+nvarperSU);   
+        end
+    end
     ix = ix+nvarpernode;
     iu = iu+nvarpernode;
-    ic = ic+nstates;
+    ic = ic+nstates+2+nvarperSU; 
 end
 

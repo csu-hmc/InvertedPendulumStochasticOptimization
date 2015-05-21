@@ -1,12 +1,8 @@
 function [X, L, U] = getIniConBound(params, result)
 
 % Bounds on x and u for each node
-if nargin == 1
-    Lpernode = [-2*pi;-1000;0;0;-1/2*params.m*params.g*params.l];
-else
-    Lpernode = [-2*pi;-1000;-inf;-inf;-1/2*params.m*params.g*params.l];
-end
-Upernode = [pi;1000;0;0;1/2*params.m*params.g*params.l];
+Lpernode = [-pi;-10;-6;-100;-1/2*params.m*params.g*params.l;-1/2*params.m*params.g*params.l];
+Upernode = [pi;10;6;100;1/2*params.m*params.g*params.l;1/2*params.m*params.g*params.l];
 
 LperSU = [];
 UperSU = [];
@@ -22,6 +18,10 @@ for i = 1:params.NSU
     U = [U;UperSU];
 end
 
+% Add feedback gain to state
+L = [L;-100;-10];
+U = [U;0;0];
+
 if nargin == 1  
     %Mid initial guess
     X = 1/2*(L+U);
@@ -30,6 +30,7 @@ else
     for i = 1:params.NSU
         X = [X;result.X(1:result.params.nvarperSU)];
     end
+    X = [X;-5;-1];
 end
 
     

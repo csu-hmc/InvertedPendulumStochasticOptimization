@@ -3,7 +3,7 @@ function [f, dfdx, dfdxdot, dfdu, dfdK, dfdKd] = StocDyn(x, xdot, u, omega, para
 m = params.m;
 l = params.l;
 g = params.g;
-torque = u;
+torque = u(1);
 
 theta = x(1);
 dtheta = x(2);

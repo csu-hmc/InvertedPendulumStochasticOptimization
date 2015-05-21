@@ -19,26 +19,6 @@ hold on
 for i = 1:size(xperSU,3)
     plot(xperSU(1,:,i),'color',0.5*[1 1 1])
 end
-plot([0 params.NperSU], [pi/2 pi/2], 'r')
+plot([0 params.NperSU], [pi/2+0.01 pi/2+0.01], 'r')
 figure
 plot(meanu(1,:))
-
-ix = 1:params.optstates;
-iu = params.optstates+(1:params.ncontrols);
-uall = zeros(params.ncontrols,params.NperSU, params.NSU);
-% Get complete input
-for j = 1:params.NSU
-    for i = 1:params.NperSU
-        theta = X(ix(1));
-        dtheta = X(ix(2));
-        K = X(ix(3));
-        Kd = X(ix(4));
-        uall(:,i,j) = X(iu)+K*theta+Kd*dtheta;
-        
-        ix = ix+params.nvarpernode;
-        iu = iu+params.nvarpernode;
-    end
-end
-
-hold on
-plot(uall(1,:,1),'--')

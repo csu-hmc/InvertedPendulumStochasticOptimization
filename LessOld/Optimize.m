@@ -9,7 +9,20 @@ options.lb = L;
 options.ub = U;
 options.cl = zeros(params.ncon,1);
 options.cu = zeros(params.ncon,1);	
-options.ipopt.max_iter = 20000;% 500000;
+for i = 1:params.NSU
+    if i == 1
+        options.cl(params.nconSU1-params.nvarpernode+1) = -0.1;
+        options.cu(params.nconSU1-params.nvarpernode+1) = 0.1;
+%         options.cl(params.nconSU1-params.nvarpernode+2) = -0.3;
+%         options.cu(params.nconSU1-params.nvarpernode+2) = 0.3;
+    else
+        options.cl(params.nconSU1+(i-1)*params.nconperSU-params.nvarpernode+1) = -0.1;
+        options.cu(params.nconSU1+(i-1)*params.nconperSU-params.nvarpernode+1) = 0.1;
+%         options.cl(params.nconSU1+(i-1)*params.nconperSU-params.nvarpernode+2) = -0.3;
+%         options.cu(params.nconSU1+(i-1)*params.nconperSU-params.nvarpernode+2) = 0.3;
+    end
+end
+options.ipopt.max_iter = 500000;
 options.ipopt.hessian_approximation = 'limited-memory';
 options.ipopt.mu_strategy = 'adaptive';		% worked better than 'monotone'
 options.ipopt.tol = 1e-4;

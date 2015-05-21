@@ -22,17 +22,10 @@ for j = 1:NSU
     % First node should match initial conditions
     x1 = X(ix);
     u1 = X(iu);
+    
     c(ic) = [x1(1)+pi/2; x1(2)];
     c(ic(end)+(1:ncontrols)) = u1;
-    
-    if j == 1
-        ic = ic+nstates+ncontrols;
-    else
-        x2 = X(ix-nvarperSU);
-        c(ic(end)+ncontrols+(1:(optstates-nstates))) = [x1(3)-x2(3);x1(4)-x2(4)];
-        ic = ic+optstates+ncontrols;
-    end    
-    
+    ic = ic+nstates+ncontrols;
     % Dynamics should match next node till one before last node
     for i = 1:NperSU-1
         x1 = X(ix);
@@ -47,33 +40,31 @@ for j = 1:NSU
         %Constraints for desired states, first SU follows dynamics, all others
         %match first
         if j > 1
+            u1 = X(iu);
             u2 = X(iu-nvarperSU);
-            x2 = X(ix-nvarperSU);
-            c(ic(end)+ncontrols+(1:(optstates-nstates))) = [x1(3)-x2(3);x1(4)-x2(4)];
-            c(ic(end)+(1:ncontrols)) = u1 - u2;
-            ic = ic+optstates-nstates+ncontrols;
+            c(ic(end)+1) = u1 - u2;
+            ic = ic+ncontrols;
         end      
         ix = ix+nvarpernode;
         iu = iu+nvarpernode;
         ic = ic+nstates;
     end
     
-    %Average of last nodes should equal pi/2, u should be zero
-    x1 = X(ix);
-    u1 = X(iu);
-    c(end) = c(end)+1/NSU*x1(1);
-    c(ic(1):ic(ncontrols)) = u1;
-    
-    if j > 1
-        x2 = X(ix-nvarperSU);        
-        c(ic(ncontrols)+(1:(optstates-nstates))) = [x1(3)-x2(3);x1(4)-x2(4)];
-        ic = ic+optstates-nstates;
+    %Last node should have pi/2 and zero and ?? and zero input?
+    if j == 1
+        x1 = X(ix);
+        u1 = X(iu);
+        c(ic(1:nstates)) = [x1(1)-pi/2;x1(2)]; 
+        c(ic(nstates)+(1:ncontrols)) = u1;
+    else
+        x1 = X(ix);
+        u1 = X(iu);
+        c(ic(1:nstates)) = [x1(1)-pi/2;x1(2)];
+        c(ic(nstates)+(1:ncontrols)) = u1;
     end
- 
+        
     ix = ix+nvarpernode;
     iu = iu+nvarpernode;
-    ic = ic+ncontrols;         
+    ic = ic+(nstates+ncontrols);         
 end
-
-c(end) = c(end)-pi/2;
 

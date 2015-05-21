@@ -1,5 +1,8 @@
 function obj = objfun(X, params)
 
+kT = params.ktheta;
+kTd = params.kthetadot;
+N = params.N;
 m = params.m;
 l = params.l;
 
@@ -18,8 +21,8 @@ for j = 1:params.NSU
         u = (X(iu)+K*theta+Kd*dtheta)/J;
         
         obj = obj+1/2*u^2;
-        if  theta > pi/2
-            obj = obj+10000*(pi/2-theta)^2;
+        if  theta > (pi/2+0.01)
+            obj = obj+1000*(pi/2+0.01-theta)^2;
         end
         ix = ix+params.nvarpernode;
         iu = iu+params.nvarpernode;
@@ -31,9 +34,9 @@ for j = 1:params.NSU
     Kd = X(ix(4));
     u = (X(iu)+K*theta+Kd*dtheta)/J;
     
-    obj = obj + 1/2*u^2;
-    if theta > pi/2
-        obj =  obj+10000*(pi/2-theta)^2;
+    obj = obj + kT*(theta-pi/2)^2+kTd*dtheta^2+1/2*u^2;
+    if theta > (pi/2+0.01)
+        obj =  obj+1000*(pi/2+0.01-theta)^2;
     end
     ix = ix+params.nvarpernode;
     iu = iu+params.nvarpernode;

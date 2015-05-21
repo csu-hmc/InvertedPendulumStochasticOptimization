@@ -25,15 +25,7 @@ for j = 1:NSU
     %First node should be at initial condition
     J(ic,ix1) = [eye(nstates) zeros(optstates-nstates)];
     J(ic(end)+(1:ncontrols),iu1) = eye(ncontrols);
-    
-    if j == 1
-        ic = ic+nstates+ncontrols;
-    else
-        ix2 = ix1-nvarperSU;
-        J(ic(end)+ncontrols+(1:(optstates-nstates)),ix1(nstates+1:optstates)) = eye(optstates-nstates);
-        J(ic(end)+ncontrols+(1:(optstates-nstates)),ix2(nstates+1:optstates)) = -eye(optstates-nstates);
-        ic = ic+optstates+ncontrols;
-    end 
+    ic = ic+nstates+ncontrols;
     
     % Dynamics should match next node till one before last node
     for i = 1:NperSU-1
@@ -59,9 +51,7 @@ for j = 1:NSU
             
             J(ic(end)+ncontrols,iu) = 1;
             J(ic(end)+ncontrols,iu-nvarperSU) = -1;
-            J(ic(end)+ncontrols+(1:(optstates-nstates)),ix1) = [zeros(nstates) eye(optstates-nstates)];
-            J(ic(end)+ncontrols+(1:(optstates-nstates)),ix1-nvarperSU) = [zeros(nstates) -eye(optstates-nstates)];
-            ic = ic+optstates-nstates+ncontrols;  
+            ic = ic+ncontrols;
         end      
         ix1 = ix1+nvarpernode;
         iu1 = iu1+nvarpernode;
@@ -70,38 +60,14 @@ for j = 1:NSU
     
     %Last node should have pi/2 and zero and ?? and zero input?
     if j == 1
-        J(ic(1), ix1(1)) = 1;%[eye(nstates) zeros(optstates-nstates)];J(ic,ix1) = [eye(nstates) zeros(optstates-nstates)];
+        J(ic,ix1) = [eye(nstates) zeros(optstates-nstates)];
         J(ic(end)+(1:ncontrols),iu1) = eye(ncontrols);
     else
-        J(ic(1), ix1(1)) = 1;%[eye(nstates) zeros(optstates-nstates)];
+        J(ic, ix1) = [eye(nstates) zeros(optstates-nstates)];
         J(ic(end)+(1:ncontrols),iu1) = eye(ncontrols);
-        J(ic(end)+ncontrols+(1:(optstates-nstates)),ix1) = [zeros(nstates) eye(optstates-nstates)];
-        J(ic(end)+ncontrols+(1:(optstates-nstates)),ix1-nvarperSU) = [zeros(nstates) -eye(optstates-nstates)];
-        ic = ic+optstates-nstates;
     end
     
     ix1 = ix1+nvarpernode;
     iu1 = iu1+nvarpernode;
     ic = ic+nstates+ncontrols;
 end
-
-
-    %Average of last nodes should equal pi/2, u should be zero
-    x1 = X(ix);
-    u1 = X(iu);
-    J(end,ix1(1)) = 1/NSU*x1(1);
-    c(ic(1):ic(ncontrols)) = u1;
-    
-    if j > 1
-        x2 = X(ix-nvarperSU);        
-        c(ic(ncontrols)+(1:(optstates-nstates))) = [x1(3)-x2(3);x1(4)-x2(4)];
-        ic = ic+optstates-nstates;
-    end
- 
-    ix = ix+nvarpernode;
-    iu = iu+nvarpernode;
-    ic = ic+ncontrols;         
-end
-
-c(end) = c(end)-pi/2;
-
