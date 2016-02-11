@@ -16,15 +16,12 @@ nvarpernode = params.nvarpernode;
 ncon = params.ncon;
 
 c = zeros(ncon,1);
-% Constraints on dynamics, only BE so far
+% Constraints on dynamics, only Midpoint so far
 for j = 1:NSU
     % First node should match initial conditions
     x1 = X(ix);
-    c(ic) = [x1(1)+pi/2; x1(2)];
+    c(ic) = [x1(1)+pi/2; x1(2)];%3*
     ic = ic+nstates; 
-    if any(ic==302)
-        ic;
-    end
     
     % Dynamics should match next node till one before last node
     for i = 1:NperSU-1
@@ -62,8 +59,10 @@ for j = 1:NSU
         ic = ic+ncontrols;
     end
     
-    if any(ic==302)
-        ic;
+    %inequality constraint
+    if params.ineq == 1
+        c(ic(1):ic(1)+params.NperSU-1) = ineqconfun(X, params,j);
+        ic = ic+params.NperSU;
     end
  
     ix = ix+nvarpernode;

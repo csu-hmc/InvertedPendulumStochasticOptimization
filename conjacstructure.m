@@ -19,6 +19,7 @@ while (nsame < 10)
     Jpattern = newJpattern ;
     Jnnz = nnz(Jpattern);
     params.Jnnz = Jnnz;
+    params.Jpattern = Jpattern;
 end
 
 J = double(Jpattern);

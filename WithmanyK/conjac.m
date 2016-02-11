@@ -1,78 +1,79 @@
 function J = conjac(X, params)
-% define constraints jacobian
 
+% define constraints jacobian
 NperSU = params.NperSU;
 NSU = params.NSU;
-h = params.h; %time step
-
-nvarpernode = params.nvarpernode;
-nvars = params.nvars;
-ncon = params.ncon;
 nstates = params.nstates;
-ncontrols = params.ncontrols;
-nvarperSU = params.nvarperSU;
+ncontrols = params.ncontrols;    
+nvarpernode1= params.nvarpernode1;
+nvarpernode = params.nvarpernode;
+nconSU = params.nconSU;
+nconeq = params.nconeq;
+nvarSU1 = params.nvarSU1;
+nvarSU = params.nvarSU;
+h = params.h;
+omega = params.omega;
 
-ix1 = 1:nstates;
-iu1 = nstates+(1:ncontrols);
-ic = 1:nstates;
+J = spalloc(params.ncon,params.nvars,params.Jnnz);
 
-J = spalloc(ncon,nvars,params.Jnnz);
-
-% Constraints on dynamics, only BE so far
+% Constraints on dynamics, only ME so far
 for j = 1:NSU
-    
     %First node should be at initial condition
+    if j == 1
+        ix1 = (1:nstates);
+    else
+        ix1 = nvarSU1+(j-2)*nvarSU+(1:nstates);
+    end
+    ic = nconSU*(j-1)+(1:nstates);
     J(ic,ix1) = eye(nstates);
-    ic = ic+nstates;
     
     % Dynamics should match next node till one before last node
     for i = 1:NperSU-1
-        ix2 = ix1 + nvarpernode;
-        iu2 = iu1 + nvarpernode;
-        x1 = X(ix1);
-        x2 = X(ix2);
-        u1 = X(iu1);
-        u2 = X(iu2);
-
-        omega = params.omega(:,NperSU*(j-1)+i);
-        [f, dfdx, dfdxdot, dfdu, dfdK, dfdKd] = StocDyn((x1+x2)/2,(x2-x1)/h,(u1+u2)/2, omega, params, X(end-params.NperSU*2+i), X(end-params.NperSU+i));
-
-        J(ic,ix1) = dfdx/2 - dfdxdot/h;
-        J(ic,ix2) = dfdx/2 + dfdxdot/h;
-        J(ic,iu1) = dfdu/2;
-        J(ic,iu2) = dfdu/2;
-        J(ic,end-params.NperSU*2+i) = dfdK;
-        J(ic,end-params.NperSU+i) = dfdKd;
-
-        %Open loop controls should match
-        if j > 1
-            iu2 = iu1-nvarperSU;
-            J(ic(end)+(1:ncontrols),iu1) = eye(ncontrols);
-            J(ic(end)+(1:ncontrols),iu2) = -eye(ncontrols);
-            ic = ic+ncontrols;
+        if j == 1
+            ix1 = (i-1)*nvarpernode1+(1:nstates);
+            ix2 = ix1 + nvarpernode1;
+        else
+            ix1 = nvarSU1+(j-2)*nvarSU+(i-1)*nvarpernode+(1:nstates);
+            ix2 = ix1 + nvarpernode;
         end
+        iu1 = (i-1)*nvarpernode1+nstates+(1:ncontrols);
+        iKs1 = (i-1)*nvarpernode1+nstates+ncontrols+(1:2);
+        ic = nconSU*(j-1)+i*nstates+(1:nstates);
+        iu2 = iu1 + nvarpernode1;
+        iKs2= iKs1+ nvarpernode1;
+        x1 = X(ix1);
+		u01 = X(iu1);
+		x2 = X(ix2);
+		u02 = X(iu2);
+        K1 = X(iKs1);
+        K2 = X(iKs2);
 
-        ix1 = ix1+nvarpernode;
-        iu1 = iu1+nvarpernode;
-        ic = ic+nstates;
+        omega_now = omega(:,NperSU*(j-1)+i);
+        [u1, du1dK1, du1dx1] = findTorque(u01, K1, x1);
+        [u2, du2dK2, du2dx2] = findTorque(u02, K2, x2);
+        [~, ~,dfdx, dfdxdot, dfdu,dfdK] = StocDyn((x1+x2)/2,(x2-x1)/h,(u1+u2)/2, omega_now, params);
+
+        J(ic, ix1) = dfdx/2-dfdxdot/h+dfdu/2*du1dx1;
+        J(ic, ix2) = dfdx/2+dfdxdot/h+dfdu/2*du2dx2;
+        J(ic, iu1) = dfdu/2;
+        J(ic, iu2) = dfdu/2;
+        J(ic, iKs1)= dfdK/2+dfdu/2*du1dK1;
+        J(ic, iKs2)= dfdK/2+dfdu/2*du2dK2;
+        
+    end
+    
+    if j == 1
+        ix1 = (NperSU-1)*nvarpernode1+(1:nstates);
+    else
+        ix1 = nvarSU1+(j-2)*nvarSU+(NperSU-1)*nvarpernode+(1:nstates);
     end
     
     %Average of last nodes should equal pi/2, u should be zero
-    J(end-1,ix1(1)) = 1/NSU;
-    J(end,ix1(2)) = 1/NSU;
-    if j > 1
-	    % Control should be equal to previous
-        J(ic(1:ncontrols),iu1) = eye(ncontrols);
-        J(ic(1:ncontrols),iu1-nvarperSU) = -eye(ncontrols);
-        ic = ic+ncontrols;
-    end
+    J(nconeq-1,ix1(1)) = 1/NSU;
+    J(nconeq,ix1(2)) = 1/NSU;
     
-    if any(ic==302)
-        ic;
-    end
-    
-    ix1 = ix1+nvarpernode;
-    iu1 = iu1+nvarpernode;
+    %Inequality constraint on the last node
+    J(nconeq+j,ix1(1)) = 1;
 end
-
-
+% 
+% 

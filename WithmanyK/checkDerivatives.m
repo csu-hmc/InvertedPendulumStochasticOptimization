@@ -1,20 +1,25 @@
-function [grad,grad_num,cjac, cjac_num] = checkDerivatives(X, params)
+function [grad,grad_num,cjac, cjac_num] = checkDerivatives(params,L,U)
+
+if nargin == 2
+    X = L;                              % a specific vector
+else
+    X = L + (U-L).*randn(size(L));		% a random vector of unknowns
+end
 
 hh = 1e-6;
 
 f = objfun(X, params);
 grad = objgrad(X, params);
-c = confun(X, params);
-cjac = full(conjac(X, params));
+c = confun_eq(X, params);
+cjac = full(conjac_eq(X, params));
 cjac_num = zeros(params.ncon, params.nvars);
 grad_num = zeros(params.nvars,1);
 for i=1:params.nvars
     fprintf('checking objgrad and conjac for unknown %4d of %4d\n',i,params.nvars);
     Xisave = X(i);
     X(i) = X(i) + hh;
-    cjac_num(:,i) = sparse(confun(X, params) - c)/hh;
+    cjac_num(:,i) = sparse(confun_eq(X, params) - c)/hh;
     grad_num(i)   = (objfun(X, params) - f)/hh;
-    hess_num(:,i) = sparse(objgrad(X, params) - grad)/hh;
     X(i) = Xisave;
 end
 		

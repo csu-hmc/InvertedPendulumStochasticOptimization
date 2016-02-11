@@ -67,8 +67,10 @@ for j = 1:NSU
         ic = ic+ncontrols;
     end
     
-    if any(ic==302)
-        ic;
+    %Inequality constraint
+    if params.ineq == 1
+        J(ic(1):ic(1)+params.NperSU-1,:) = ineqconjac(X, params,j);
+        ic = ic+params.NperSU;
     end
     
     ix1 = ix1+nvarpernode;

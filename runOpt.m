@@ -1,4 +1,4 @@
-function result = runOPT(NSU)
+function [result, allresults] = runOPT(NSU)
 
 % Declare parameters
 params.m = 5;
@@ -13,6 +13,8 @@ params.ncontrols= 1;
 
 params.NperSU = 60;
 params.NSU = 1; %number of swingups
+params.solver = 'IPOPT';
+params.ineq = 0; %Enable inequality constraints
 
 params = getParams(params);
 params.omega = zeros(params.nstates,params.N);
@@ -26,6 +28,7 @@ result1 = Optimize(X0, L, U, params);
 
 % Now add more swingups and noise
 params.NSU = NSU;
+params.ineq = 0;
 params = getParams(params);
 params.omega = 0.001*randn(params.nstates,params.N); %Added noise, low pass filtered
 
@@ -58,3 +61,11 @@ X0 = result6.X;
 params.omega = 1*randn(params.nstates,params.N); %Added noise, low pass filtered
 [~, params] = conjacstructure(L, U, params);
 result = Optimize(X0, L, U, params);
+
+allresults(1) = result1;
+allresults(2) = result2;
+allresults(3) = result3;
+allresults(4) = result4;
+allresults(5) = result5;
+allresults(6) = result6;
+allresults(7) = result;

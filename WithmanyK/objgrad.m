@@ -1,50 +1,43 @@
 function dobj = objgrad(X, params)
 
+ncontrols = params.ncontrols;
+nvarpernode1 = params.nvarpernode1;
+nvarpernode = params.nvarpernode;
+nstates = params.nstates;
+nvarSU1 = params.nvarSU1;
+nvarSU = params.nvarSU;
+
 m = params.m;
 l = params.l;
 J = m*l^2;
 
-ix = 1:params.nstates;
-iu = params.nstates+(1:params.ncontrols);
-
 dobj = zeros(size(X));
 for j = 1:params.NSU
-    for i = 1:params.NperSU-1
-        K = X(end-params.NperSU*2+i);
-        Kd = X(end-params.NperSU+i);
-        theta = X(ix(1));
-        dtheta = X(ix(2));
-
-        u = (X(iu)+K*theta+Kd*dtheta)/J;
-        
-        dobj(iu) = dobj(iu)+u/J;
-        dobj(ix) = dobj(ix) + [u*K/J; u*Kd/J];
-        dobj(end-params.NperSU*2+i) = dobj(end-params.NperSU*2+i)+u*theta/J;
-        dobj(end-params.NperSU+i) = dobj(end-params.NperSU+i)+u*dtheta/J;
-        if  theta > pi/2
-            dobj(ix(1)) = dobj(ix(1))-0000*(pi/2-theta);
+    for i = 1:params.NperSU
+        if j == 1
+            ix1 = (i-1)*nvarpernode1+(1:nstates);
+        else
+            ix1 = nvarSU1+(j-2)*nvarSU+(i-1)*nvarpernode+(1:nstates);
         end
-        ix = ix+params.nvarpernode;
-        iu = iu+params.nvarpernode;
+        iu1 = (i-1)*nvarpernode1+nstates+(1:ncontrols);
+        iKs1 = (i-1)*nvarpernode1+nstates+ncontrols+(1:2);
+        
+        x = X(ix1);
+		u0 = X(iu1);
+        Ks = X(iKs1);
+        
+        [u, dudK, dudx] = findTorque(u0, Ks, x);
+        
+        dobj(ix1) = dobj(ix1) + (u/J^2)*dudx';
+        dobj(iu1) = dobj(iu1) + (u/J^2);
+        dobj(iKs1)= dobj(iKs1)+ (u/J^2)*dudK';
+
     end
 
-    %Final cost
-    K = X(end-params.NperSU);
-    Kd = X(end);
-    theta = X(ix(1));
-    dtheta = X(ix(2));
-    u = (X(iu)+K*theta+Kd*dtheta)/J;
-    
-    dobj(ix) = dobj(ix) + [u*K/J; u*Kd/J];
-    dobj(end-params.NperSU)= dobj(end-params.NperSU)+u*theta/J;
-    dobj(end)= dobj(end)+u*dtheta/J;
-    dobj(iu) = dobj(iu)+u/J;
-    if  theta > pi/2
-        dobj(ix(1)) = dobj(ix(1))-0000*(pi/2-theta);
-    end
-    
-    ix = ix+params.nvarpernode;
-    iu = iu+params.nvarpernode;
+%     dobj(ix1) = dobj(ix1) + (u/J^2)*dudx';
+%     dobj(iu1) = dobj(iu1) + (u/J^2);
+%     dobj(iKs1)= dobj(iKs1)+ (u/J^2)*dudK';
+
 end
 
 dobj = dobj/params.NSU;

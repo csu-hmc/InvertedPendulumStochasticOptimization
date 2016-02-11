@@ -9,7 +9,7 @@ obj = zeros(size(xx));
 K = zeros(2,length(xx));
 meanx = zeros(length(xx),60);
 for i = 1:length(xx)
-    loadname = ['Solution_' num2str(xx(i)) 'SUs.mat'];
+    loadname = ['Solutions/Solution_' num2str(xx(i)) 'SUs.mat'];
     load(loadname)
     obj(i) = result.obj;
     K(:,i) = result.X(end-1:end);
