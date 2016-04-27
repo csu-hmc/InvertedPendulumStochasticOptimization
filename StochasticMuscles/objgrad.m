@@ -1,21 +1,19 @@
 function dobj = objgrad(X, params)
 
-itheta = params.ndof;
-iact = params.ndof*2+(1:params.nmus);
+% keyboard;
+
+itheta = params.ncontrols+params.ndof;
+iact = params.ncontrols+params.ndof*2+(1:params.nmus);
 
 dobj = zeros(size(X));
-for j = 1:params.NSU
-    for i = 1:params.NperSU
+for j = 1:params.Nsamples
+    for i = 1:params.N
         theta = X(itheta);
         u = X(iact); 
         dobj(iact) = dobj(iact)+u;
-        dobj(itheta) = dobj(itheta)+params.W*(theta-pi/2);
-        if j == 1
-            iact = iact+params.nvarpernode1;
-        else
-            iact = iact+params.nvarpernode;
-        end
+        dobj(itheta) = dobj(itheta)+params.W*(theta-params.targetangle);
+        iact = iact+params.nvarpernode;
+        itheta = itheta+params.nvarpernode;
     end
 end
-
-% dobj = dobj/params.NSU/params.NperSU;
+dobj = dobj/params.N/params.Nsamples;

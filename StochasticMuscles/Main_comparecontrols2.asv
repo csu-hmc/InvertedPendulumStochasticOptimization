@@ -1,0 +1,103 @@
+rng('shuffle')
+
+clear all
+close all
+clc
+
+%Main program for pendulum swingup
+
+% Declare parameters
+params.m = 2;
+params.l = 0.6;
+params.g = 9.81;
+params.T = 1; %Duration of motion
+params.N = 100;
+params.Nsamples = 1;
+params.h = params.T/(params.N-1);
+
+params.ndof = 1;
+params.nmus = 2;
+params.nstates = params.ndof*2+params.nmus*2;
+params.ncontrols= 1;%params.nmus;
+params.targetangle = pi/2;
+
+params = getParams(params);
+params.muscleparam = Muscleparams();
+params.solver = 'IPOPT';
+params.omega = 0*randn(params.ndof*2,params.N); %Added noise
+params.W = 0;%1e-5;
+params.method = 'BE';
+params.epsilon = 1e-2;
+
+[X0, L, U] = getIniConBound(params);
+[~, params] = conjacstructure(L, U, params);
+% 
+% [grad,grad_num,cjac, cjac_num] = checkDerivatives(X0+randn(size(X0)), params);
+% keyboard;
+
+load('Neutralstate.mat')
+params.cone = cone;
+
+%First result witout noise for desired trajectory
+result1 = Optimize(X0, L, U, params);
+
+% plotresult(result1);
+% pause(1e-6)
+% [X0, L, U] = getIniConBound(params,1,result1);
+% [~, params] = conjacstructure(L, U, params);
+% 
+% %First result witout noise for desired trajectory
+% result1n = Optimize(X0, L, U, params);
+
+params.Nsamples = 30;
+params = getParams(params);
+for i = 1:10
+    % Now add noise and increase time
+    stdev = .2/sqrt(params.h);
+    params.omega = stdev*randn(params.ndof*2,params.N*params.Nsamples); %Added noise
+
+    [X0, L, U] = getIniConBound(params,0,result1);
+    [~, params] = conjacstructure(L, U, params);
+    
+%     [grad,grad_num,cjac, cjac_num] = checkDerivatives(X0+randn(size(X0)), params);
+%     keyboard;
+
+    result2 = Optimize(X0, L, U, params);
+%     
+%     [X0, L, U] = getIniConBound(params,1,result2);
+%     result2n = Optimize(X0, L, U, params);
+
+    stdev = .6/sqrt(params.h);
+    params.omega = stdev*randn(params.ndof*2,params.N); %Added noise
+
+    [X0, L, U] = getIniConBound(params,0,result2);
+    result3 = Optimize(X0, L, U, params);
+    
+%     [X0, L, U] = getIniConBound(params,1,result3);
+%     result3n = Optimize(X0, L, U, params);
+% keyboard
+    stdev = 1.2/sqrt(params.h);
+    params.omega = stdev*randn(params.ndof*2,params.N); %Added noise
+
+    [X0, L, U] = getIniConBound(params,0,result3);
+    result4 = Optimize(X0, L, U, params);
+
+%     [X0, L, U] = getIniConBound(params,1,result4);
+%     result4n = Optimize(X0, L, U, params);
+% keyboard
+    stdev = 2/sqrt(params.h);
+    params.omega = stdev*randn(params.ndof*2,params.N); %Added noise
+
+    [X0, L, U] = getIniConBound(params,0,result4);
+    result5 = Optimize(X0, L, U, params);
+
+keyboard
+    
+    result(i).cocon = result5;
+%     result(i).nococ = result5n;
+    resultl(i).cocon = result4;
+%     result12(i).nococ = result4n;
+end
+
+save('030316Results.mat', 'result', 'result1', 'result11', 'result12')
+    

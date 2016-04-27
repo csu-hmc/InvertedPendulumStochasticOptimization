@@ -1,0 +1,256 @@
+ 
+ Scale option  0
+ 
+
+ Nonlinear constraints    9000     Linear constraints       1
+ Nonlinear variables      9003     Linear variables         0
+ Jacobian  variables      9003     Objective variables   4500
+ Total constraints        9001     Total variables       9003
+ 
+
+ WARNING:      1 basics specified; preferably should have been   9001
+ Itn      0: BR factorize
+ Itn      0: LU partial  pivoting tols       2.00      2.00
+ Itn      0: Feasible linear rows
+
+ 
+ The user has defined   49380   out of   49380   first  derivatives
+ 
+ Itn      0: Hessian set to a scaled identity matrix
+
+        Minor NumInf  FP mult  FP step   rgNorm         SumInf     nS
+          100   1896  1.4E+06  4.8E-09           3.3805522E+02
+          200   1645 -6.5E+05  1.4E-11           3.3769660E+02
+          300   1497  4.2E+03  1.3E-11           3.3755556E+02
+          400   1497 -1.1E+04  1.3E-11           3.3755503E+02
+          500   1497 -2.8E+04  1.2E-11           3.3755467E+02
+          600   1496 -3.6E+04  1.2E-11           3.3755068E+02
+          700   1496 -7.6E+04  1.2E-11           3.3755061E+02
+          800   1496  1.5E+05  1.2E-11           3.3755048E+02
+          900   1496  7.2E+02  6.9E-10           3.3755024E+02
+         1000   1496  2.1E+03  1.9E-10           3.3755018E+02
+
+        Minor NumInf  FP mult  FP step   rgNorm         SumInf     nS
+         1100   1496  1.5E+03  3.9E-09           3.3755010E+02
+         1200   1496  2.7E+03  3.0E-10           3.3754990E+02
+         1300   1496  2.9E+03  3.0E-10           3.3754971E+02
+         1400   1496  1.6E+03  3.0E-10           3.3754887E+02
+ Itn   1453: Chzq failed in s5QNitn!!
+         1500   1496  1.5E+03  3.4E-10           3.3754787E+02
+         1600   1496  2.2E+03  3.5E-10           3.3754602E+02
+ Itn   1612: Chzq failed in s5QNitn!!
+ Itn   1614: Chzq failed in s5QNitn!!
+ Itn   1641: Chzq failed in s5QNitn!!
+ Itn   1643: Chzq failed in s5QNitn!!
+ Itn   1645: Chzq failed in s5QNitn!!
+ Itn   1647: Chzq failed in s5QNitn!!
+ Itn   1649: Chzq failed in s5QNitn!!
+ Itn   1651: Chzq failed in s5QNitn!!
+ Itn   1653: Chzq failed in s5QNitn!!
+ Itn   1656: Chzq failed in s5QNitn!!
+ Itn   1658: Chzq failed in s5QNitn!!
+ Itn   1660: Chzq failed in s5QNitn!!
+ Itn   1662: Chzq failed in s5QNitn!!
+ Itn   1664: Chzq failed in s5QNitn!!
+ Itn   1667: Chzq failed in s5QNitn!!
+ Itn   1669: Chzq failed in s5QNitn!!
+ Itn   1671: Chzq failed in s5QNitn!!
+ Itn   1673: Chzq failed in s5QNitn!!
+ Itn   1675: Chzq failed in s5QNitn!!
+ Itn   1677: Chzq failed in s5QNitn!!
+ Itn   1679: Chzq failed in s5QNitn!!
+         1700   1496  1.7E+03  2.9E-10           3.3753974E+02
+         1800   1496  5.0E+04  9.8E-12           3.3753968E+02
+         1900   1496  5.6E+04  1.0E-11           3.3753962E+02
+         2000   1496  2.0E+03  3.7E-10           3.3753956E+02
+
+        Minor NumInf  FP mult  FP step   rgNorm         SumInf     nS
+         2100   1496  2.0E+03  3.7E-10           3.3753949E+02
+         2200   1496 -8.5E+04  9.0E-12           3.3753941E+02
+         2300   1496 -6.7E+04  9.8E-12           3.3753934E+02
+         2400   1496  6.9E+04  9.8E-12           3.3753927E+02
+         2500   1496 -7.3E+04  9.9E-12           3.3753918E+02
+         2600   1496 -7.7E+04  1.0E-11           3.3753910E+02
+         2700   1496 -7.8E+04  1.0E-11           3.3753901E+02
+         2800   1496  8.2E+04  1.0E-11           3.3753892E+02
+         2900   1496 -8.3E+04  1.0E-11           3.3753882E+02
+         3000   1496 -8.7E+04  1.0E-11           3.3753873E+02
+
+        Minor NumInf  FP mult  FP step   rgNorm         SumInf     nS
+         3100   1494 -3.5E+03  1.9E-09           3.3731646E+02
+         3200   1493 -3.0E+03  1.8E-09           3.3729437E+02
+         3300   1492  1.5E+04  1.9E-09           3.3725376E+02
+         3400   1492 -2.5E+04  1.9E-09           3.3724998E+02
+         3500   1492 -4.7E+04  1.2E-09           3.3720478E+02
+         3600   1492 -3.3E+04  2.9E-09           3.3719667E+02
+         3700   1492  5.7E+04  1.2E-09           3.3718824E+02
+         3800   1492 -5.8E+04  1.2E-09           3.3717928E+02
+         3900   1492  5.8E+04  1.9E-09           3.3713895E+02
+         4000   1491 -7.3E+04  1.1E-09           3.3708971E+02
+
+        Minor NumInf  FP mult  FP step   rgNorm         SumInf     nS
+         4100   1491  8.7E+04  1.9E-09           3.3706691E+02
+         4200   1491 -8.6E+04  1.9E-09           3.3705047E+02
+         4300   1477  5.8E+04  2.7E-09           3.3503473E+02
+         4400   1465 -1.5E+05  1.1E-06           3.3400048E+02
+         4500   1453  8.7E+04  4.0E-09           3.3271170E+02
+         4600   1452  1.3E+05  8.7E-07           3.3256248E+02
+         4700   1452  1.5E+05  3.4E-09           3.3244262E+02
+         4800   1452  1.7E+05  3.4E-09           3.3238625E+02
+         4900   1452  1.8E+05  3.4E-09           3.3232641E+02
+         5000   1452 -1.9E+04  3.7E-08           3.3225403E+02
+
+        Minor NumInf  FP mult  FP step   rgNorm         SumInf     nS
+         5100   1452  1.8E+05  4.3E-09           3.3218168E+02
+         5200   1451  2.4E+05  3.4E-09           3.3209835E+02
+         5300   1451  2.6E+05  3.5E-09           3.3201252E+02
+         5400   1451  2.8E+05  3.5E-09           3.3191480E+02
+         5500   1451  3.0E+05  3.4E-09           3.3181166E+02
+         5600   1448  3.2E+05  3.5E-09           3.3132431E+02
+         5700   1448  3.1E+05  3.3E-09           3.3104468E+02
+         5800   1448  3.7E+05  3.3E-09           3.3091012E+02
+         5900   1446 -7.7E+04  1.8E-08           3.2980932E+02
+         6000   1430 -7.3E+05  2.1E-09           3.2287307E+02
+
+        Minor NumInf  FP mult  FP step   rgNorm         SumInf     nS
+         6100   1403  1.8E+05  1.6E-10           3.1453512E+02
+         6200   1347 -3.5E+04  2.0E-08           3.0202161E+02
+         6300   1304  2.0E+05  1.6E-10           2.9228655E+02
+         6400   1260  1.4E+05  1.4E-10           2.8279773E+02
+         6500   1207  1.0E+05  1.6E-06           2.7324853E+02
+         6600   1191  9.4E+05  3.6E-09           2.7007707E+02
+         6700   1149 -3.4E+04  2.0E-08           2.6338434E+02
+         6800   1127  9.0E+05  3.3E-09           2.6061651E+02
+         6900   1124  9.2E+05  3.4E-09           2.6018410E+02
+         7000   1120  9.5E+05  3.4E-09           2.5980817E+02
+
+        Minor NumInf  FP mult  FP step   rgNorm         SumInf     nS
+         7100   1115  9.8E+05  3.5E-09           2.5944063E+02
+         7200   1108  1.2E+06  3.2E-09           2.5792727E+02
+         7300   1101  1.3E+06  3.3E-09           2.5641279E+02
+         7400   1039 -2.1E+04  2.8E-05           2.4803461E+02
+         7500    991  7.9E+05  3.7E-09           2.4223757E+02
+         7600    949 -2.0E+04  2.1E-08           2.3809882E+02
+         7700    909  6.4E+05  4.5E-09           2.3607387E+02
+         7800    859 -5.0E+03  1.7E-06           2.3331073E+02
+         7900    799  1.6E+05  3.5E-09           2.3144975E+02
+         8000    754 -6.4E+02  1.9E-09           2.3076293E+02
+
+        Minor NumInf  FP mult  FP step   rgNorm         SumInf     nS
+         8100    750  3.8E+02  4.0E-05           2.3053734E+02
+         8200    746 -3.1E+02  1.8E-07           2.2898037E+02
+         8300    666 -1.0E+02  2.3E-05           2.1143935E+02
+         8400    569 -4.0E+02  6.1E-06           1.8950585E+02
+         8500    470 -7.9E+01  1.6E-04           1.6240124E+02
+         8600    371 -7.3E+01  5.3E-03           1.3562859E+02
+         8700    271  9.7E+01  5.0E-03           1.0530089E+02
+         8800    172  7.4E+01  8.1E-03           7.0749919E+01
+         8900     72 -8.3E+01  2.3E-05           3.3722273E+01
+
+        Minor NonOpt  QP mult  QP step   rgNorm   QP objective     nS
+         9000      5  3.9E-02  1.0E+00  9.7E-15  3.3167076E-01      5
+
+ Major Minors     Step   nCon Feasible  Optimal  MeritFunction     nS Penalty
+     0   9006               1  3.8E-01 (2.2E-03) 2.1911280E-03      6           r
+ Itn   9006: Hessian set to a scaled identity matrix
+ Itn   9006: LU partial  pivoting tols       3.99      3.99
+     1     29  2.9E-01      8  1.0E+01 (3.7E-03) 7.6453652E-01      6 5.3E-01   r
+     2      5  1.0E+00     10  1.3E+01  5.6E-02 -7.4270552E+01      9 5.3E-01 sM
+     3      2  2.6E-03     13  1.2E+01  5.6E-02  9.6719954E-02      9 5.6E-01  m
+     4      2  2.6E-03     16  1.2E+01  5.6E-02  9.6650052E-02      9 5.6E-01  m
+     5      4  2.6E-03     19  1.2E+01  5.7E-02  9.6578775E-02      8 5.6E-01  m
+     6      4  2.7E-03     22  1.2E+01  3.7E+00  9.6505598E-02      7 5.6E-01  m
+ Itn   9052: Hessian off-diagonals discarded
+     7     21  1.5E-03     27  1.2E+01  7.1E-01  4.5472306E-01      8 5.6E-01  mR
+     8      2  1.6E-02     30  1.2E+01  6.4E-01  7.0752724E-01      8 5.6E-01 sm
+     9      2  4.5E-02     33  1.2E+01  4.8E-01  6.8747336E-01      8 5.6E-01  m
+
+ Major Minors     Step   nCon Feasible  Optimal  MeritFunction     nS Penalty
+    10      6  4.7E-02     36  1.1E+01  5.1E-01  6.6657030E-01      6 5.6E-01 sM
+    11      3  4.5E-02     40  1.1E+01  3.0E-01  6.3950134E-01      5 5.6E-01  m
+    12      7  7.5E-02     44  1.0E+01  7.6E-01  6.2709633E-01      6 5.6E-01  m
+ Itn   9093: Hessian off-diagonals discarded
+    13     17  1.0E-01     48  9.4E+00  6.1E+00  6.5360583E-01      7 5.6E-01  mR
+    14      2  7.6E-02     51  8.7E+00  5.1E-02  6.2215988E-01      7 5.6E-01 sM
+    15      2  9.2E-02     54  7.8E+00  5.8E-01  5.8240528E-01      7 5.6E-01  M
+    16      2  1.0E-01     57  7.0E+00  4.0E-01  5.4020204E-01      7 5.6E-01  M
+    17      2  1.2E-01     60  6.0E+00  2.9E-01  4.9585592E-01      7 5.6E-01  M
+    18      2  1.4E-01     63  5.0E+00  4.8E-01  4.4914557E-01      7 5.6E-01  M
+ Itn   9120: Hessian off-diagonals discarded
+    19      8  1.2E-01     67  4.1E+00  3.4E+00  4.0023881E-01      7 5.6E-01  MR
+
+ Major Minors     Step   nCon Feasible  Optimal  MeritFunction     nS Penalty
+    20      3  1.8E-01     70  3.4E+00  1.9E-02  3.5170603E-01      5 5.6E-01 sM
+    21     25  2.7E-01     73  1.7E+00  2.1E+00  3.1876572E-01      4 5.6E-01  M
+    22      4  1.1E-02     78  1.6E+00  2.1E+00  7.9080148E-01      5 5.6E-01  m
+    23      2  2.2E-02     83  1.6E+00  1.2E+00  7.8343062E-01      5 5.6E-01  M
+    24      3  2.3E-02     88  1.6E+00  2.0E+00  7.9281466E-01      3 5.6E-01  M
+ Itn   9165: Hessian set to a scaled identity matrix
+    25     26  1.9E-01     92  1.3E+00 (1.2E-03) 4.9173313E-01      5 5.6E-01  Mr
+    26     10  1.8E-01     98  1.1E+00 (9.0E-03) 2.6452311E-01      5 5.7E-01 sM
+    27      5  6.4E-03    103  1.1E+00  7.6E-02  7.0921693E-01      5 5.7E-01  M
+    28     19  1.0E+00    105  6.1E-01  6.4E-02  4.0938869E-01      5 5.7E-01  m
+ Itn   9225: LU partial  pivoting tols       2.00      2.00
+    29     12  1.0E+00    106  2.7E-01  4.9E-02  1.6706593E-01      4 5.7E-01
+ Itn   9237: LU partial  pivoting tols       3.99      3.99
+
+ Major Minors     Step   nCon Feasible  Optimal  MeritFunction     nS Penalty
+    30     17  3.5E-01    109  2.4E-01  1.0E-02  1.3193532E-01      6 5.7E-01  m
+ Itn   9254: Hessian off-diagonals discarded
+    31      8  4.5E-01    112  1.8E-01  7.0E-02  7.0304374E-02      7 5.7E-01  MR
+    32      3  1.0E+00    114  1.3E-01  2.6E-02  1.3447339E-03      6 5.7E-01 sm
+    33      1  1.0E+00    115  1.1E-01 (8.5E-03) 1.1332037E-03      6 5.7E-01
+    34      1  1.0E+00    116  9.2E-02 (7.9E-03) 6.4055064E-04      6 5.7E-01
+    35      2  1.0E+00    117  8.4E-02 (4.3E-03) 3.5810341E-04      6 5.7E-01
+    36      6  9.2E-02    123  7.6E-02  5.6E-02  3.5661267E-04      6 5.7E-01  m
+ Itn   9275: Hessian off-diagonals discarded
+    37      5  7.3E-03    127  7.5E-02 (5.5E-03) 3.5606146E-04      6 5.7E-01   R
+    38      2  2.5E-01    129  5.7E-02 (3.9E-03) 3.5424155E-04      6 5.7E-01 s
+    39      2  3.6E-01    131  3.6E-02 (7.3E-03) 3.5161226E-04      6 5.7E-01
+
+ Major Minors     Step   nCon Feasible  Optimal  MeritFunction     nS Penalty
+    40      3  5.9E-01    133  1.5E-02 (1.2E-03) 3.4745370E-04      6 5.7E-01
+    41      2  5.0E-01    135  8.0E-03 (1.2E-03) 3.4057752E-04      6 5.7E-01
+    42      1  2.2E-01    138  6.3E-03  1.7E-02  3.3702602E-04      6 5.7E-01
+ Itn   9290: Hessian off-diagonals discarded
+    43      2  8.6E-03    142  6.2E-03 (4.9E-03) 3.3630585E-04      6 5.7E-01   R
+    44      2  1.0E+00    143  1.1E-03 (2.3E-03) 3.2757739E-04      6 5.7E-01 s
+    45      3  1.0E+00    144  1.1E-03  1.4E-02  3.2295084E-04      6 5.7E-01
+    46      1  7.5E-03    148  1.1E-03  5.2E-02  3.2230782E-04      6 5.7E-01
+    47      1  7.0E-03    152  1.1E-03  4.7E-02  3.2157038E-04      6 5.7E-01
+    48      1  6.8E-03    156  1.1E-03  4.2E-02  3.2073922E-04      6 5.7E-01
+ Itn   9300: Hessian off-diagonals discarded
+    49      5  6.8E-03    160  1.2E-03 (2.5E-03) 3.1980922E-04      6 5.7E-01   R
+
+ Major Minors     Step   nCon Feasible  Optimal  MeritFunction     nS Penalty
+    50      2  1.0E+00    161 (4.8E-04) 2.8E-02  3.1402107E-04      6 5.7E-01 s
+    51      6  7.9E-03    165 (5.2E-04) 1.7E-02  3.1317136E-04      6 5.7E-01
+    52      3  7.5E-03    169 (5.6E-04) 1.1E-02  3.1199041E-04      4 5.7E-01
+    53      2  7.4E-03    173 (6.1E-04) 1.2E-02  3.1059024E-04      3 5.7E-01
+    54      1  7.5E-03    177 (6.4E-04) 1.1E-02  3.0908401E-04      3 5.7E-01
+ Itn   9319: Hessian off-diagonals discarded
+    55     14  7.9E-03    181 (6.7E-04)(2.7E-03) 3.0755145E-04      6 5.7E-01   R
+ 
+ SNOPTA EXIT   0 -- finished successfully
+ SNOPTA INFO   1 -- optimality conditions satisfied
+
+ Problem name                 matlabMx
+ No. of iterations                9333   Objective            3.0626534220E-04
+ No. of major iterations            55   Linear    obj. term  0.0000000000E+00
+ Penalty parameter           5.699E-01   Nonlinear obj. term  3.0626534220E-04
+ User function calls (total)       182
+ No. of superbasics                  6   No. of basic nonlinears          8995
+ No. of degenerate steps          7437   Percentage                      79.68
+ Max x                    8999 3.8E+00   Max pi                   9001 1.0E+00
+ Max Primal infeas        3604 2.3E-15   Max Dual infeas          8908 1.3E-02
+ Nonlinear constraint violn    2.5E-03
+ 
+ 
+
+ Solution printed on file   9
+ 
+ Time for MPS input                             0.00 seconds
+ Time for solving problem                     331.43 seconds
+ Time for solution output                       0.33 seconds
+ Time for constraint functions                297.79 seconds
+ Time for objective function                    0.00 seconds
