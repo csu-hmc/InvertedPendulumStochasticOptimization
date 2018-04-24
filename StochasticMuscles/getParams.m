@@ -6,4 +6,4 @@ params.nvarSU = params.nvarSU1*params.Nsamples;
 params.nvars = params.ncontrols+params.nvarSU+params.Ks;
 params.nconeq = params.nstates*params.N*params.Nsamples;
 params.nconineq = 0;% params.nmus*params.N*params.Nsamples;%+params.ndof;
-params.ncon = params.nconeq + params.nconineq+1;
+params.ncon = params.nconeq + params.nconineq;%+1;

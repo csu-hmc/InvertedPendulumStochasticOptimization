@@ -28,7 +28,7 @@ Fsee = zeros(params.nmus,params.N,params.Nsamples);
 Torque = zeros(params.N, params.Nsamples);
 for j = 1:params.Nsamples
     for i = 1:params.N
-        Fsee(:,i,j) = getMusDyns_asat(x1(:,i,j),zeros(6,1),uall(:,i,j),params);
+        Fsee(:,i,j) = getMusDyns(x1(:,i,j),zeros(6,1),uall(:,i,j),params);
         Torque(i,j) = params.muscleparam.d*Fsee(:,i,j);
     end
 end
@@ -42,7 +42,7 @@ if plotyes == 1
     figure
     hold on
     for i = 1:size(x1,3)
-        plot([0:h:T],x1(1,:,i)/pi*180,'color',0.2*[1 1 1])
+        plot([0:h:T],x1(1,:,i)/pi*180,'color',0.2*[1 1 1], 'LineWidth', 1.2)
     end
     plot([0:h:T],meanx(1,:)/pi*180, 'b', 'LineWidth', 1.5);
     plot([0 T], [pi/2 pi/2]/pi*180, 'r')
@@ -50,33 +50,28 @@ if plotyes == 1
     ylabel('Pendulum Angle [deg]')
     
     figure
-%     plot([0:h:T],umean)
-%     hold on
-%     plot([0:h:T],uall(:,:,1), '--')
-    plot(transpose(uall(:,:)), '--')
+    plot([0:h:T], transpose(uall(:,:)), 'LineWidth', 1.2)
+    legend('Muscle 1', 'Muscle 2')
     xlabel('Time [s]')
     ylabel('Input signal')
     
     figure
-    plot([0:h:T], Torquem)
+    plot([0:h:T], Torquem, 'LineWidth', 1.2)
     xlabel('Time [s]')
     ylabel('Torque [Nm]')
     
     figure
     subplot(3,1,1)
-%     plot([0:h:T],Fseem')
-    plot(transpose(Fsee(:,:)))
-    ylabel('Muscle force Fsee [N]')
+    plot([0:h:T],transpose(Fsee(:,:)), 'LineWidth', 1.2)
+    ylabel({'Muscle force';'Fsee [N]'})
     
     subplot(3,1,2)
-    plot([0:h:T],meanx(3:4,:))
-    plot(transpose(x1(3:4,:)))
-    ylabel('Activation State')
+    plot([0:h:T],transpose(x1(3:4,:)), 'LineWidth', 1.2)
+    ylabel({'Activation'; 'State'})
     
     subplot(3,1,3)
-%     plot([0:h:T],meanx(5:6,:))
-    plot(transpose(x1(5:6,:)))
+    plot([0:h:T],transpose(x1(5:6,:)), 'LineWidth', 1.2)
     xlabel('Time [s]')
-    ylabel('CE length [-]')
+    ylabel({'CE length'; '[-]'})
     
 end

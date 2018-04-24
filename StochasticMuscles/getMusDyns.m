@@ -40,10 +40,6 @@ dfdx(1:nmus,2*ndof+(1:nmus)) = diag(-(c1*u-c2));
 dfdu(1:nmus,:) = diag(c1*u-c2)+diag((u-a)*c1);
 dfdxdot(1:nmus,2*ndof+(1:nmus)) = -eye(nmus);
 
-%Saturate activation a here
-a_sat = 1/2*((1-a)+sqrt((1-a).^2+1e-3^2));
-da_satda = -1/2*(1+(1-a)./sqrt((1-a).^2+1e-3^2));
-
 %Force in contractile element
 flce = exp(-((lce-1)/w).^2);
 dflcedlce = -2*(lce-1)/w^2.*flce;

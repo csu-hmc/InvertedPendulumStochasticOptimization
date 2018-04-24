@@ -8,6 +8,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="744.09448819"
@@ -18,7 +19,7 @@
    inkscape:export-filename="C:\Users\2625262\Documents\StochasticMuscles\MusclePendulum.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
-   sodipodi:docname="drawing.svg">
+   sodipodi:docname="co-contraction.svg">
   <defs
      id="defs4">
     <linearGradient
@@ -37,16 +38,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="82.434234"
-     inkscape:cy="648.40382"
+     inkscape:zoom="2.0000001"
+     inkscape:cx="298.54754"
+     inkscape:cy="586.44451"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1106"
      inkscape:window-height="874"
-     inkscape:window-x="1668"
-     inkscape:window-y="92"
+     inkscape:window-x="1528"
+     inkscape:window-y="21"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -69,7 +70,7 @@
        d="m 269.08487,469.88099 18.22487,30.73214"
        id="path3765"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\PendMusc.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\MetCostTechNote\Pictures\PendMusck.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
@@ -77,7 +78,7 @@
        d="m 283.27168,469.88099 18.22487,30.73214"
        id="path3765-1"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\PendMusc.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\MetCostTechNote\Pictures\PendMusck.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
@@ -85,7 +86,7 @@
        d="m 297.45851,469.88099 18.22487,30.73214"
        id="path3765-7"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\PendMusc.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\MetCostTechNote\Pictures\PendMusck.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
@@ -93,7 +94,7 @@
        d="m 311.6453,469.88099 18.22487,30.73214"
        id="path3765-4"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\PendMusc.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\MetCostTechNote\Pictures\PendMusck.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
@@ -101,7 +102,7 @@
        d="m 325.83212,469.88099 18.22487,30.73214"
        id="path3765-0"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\PendMusc.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\MetCostTechNote\Pictures\PendMusck.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
@@ -109,13 +110,13 @@
        d="m 340.01893,469.88099 18.22487,30.73214"
        id="path3765-9"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\PendMusc.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\MetCostTechNote\Pictures\PendMusck.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <g
        id="g3835"
        transform="translate(-4.690389,4.4632038)"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\PendMusc.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\MetCostTechNote\Pictures\PendMusck.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90">
       <path
@@ -134,28 +135,6 @@
          d="m 305.13902,419.53282 -26.36745,45.30703"
          style="fill:none;stroke:#7f003d;stroke-width:1.07647789px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     </g>
-    <g
-       transform="matrix(-1,0,0,1,613.85219,3.8961885)"
-       id="g3835-8"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\PendMusc.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90">
-      <path
-         transform="matrix(1.3236661,0.71401112,-0.23918863,0.4434187,39.320181,94.792028)"
-         d="m 259.4364,373.57504 c 0,12.92703 -0.95995,23.40645 -2.1441,23.40645 -1.18416,0 -2.14411,-10.47942 -2.14411,-23.40645 0,-12.92702 0.95995,-23.40645 2.14411,-23.40645 1.18415,0 2.1441,10.47943 2.1441,23.40645 z"
-         sodipodi:ry="23.406452"
-         sodipodi:rx="2.1441026"
-         sodipodi:cy="373.57504"
-         sodipodi:cx="257.2923"
-         id="path3813-8"
-         style="fill:#7f003d;fill-opacity:1;stroke:none"
-         sodipodi:type="arc" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path3833-2"
-         d="m 305.13902,419.53282 -26.36745,45.30703"
-         style="fill:none;stroke:#7f003d;stroke-width:1.07647789px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    </g>
     <rect
        style="fill:none;stroke:#000000;stroke-width:1.18004453;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect3786"
@@ -163,7 +142,7 @@
        height="118.31996"
        x="300.52798"
        y="344.45221"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\PendMusc.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\MetCostTechNote\Pictures\PendMusck.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
@@ -184,7 +163,7 @@
        inkscape:transform-center-x="-0.0097177148"
        inkscape:transform-center-y="-3.720689"
        transform="matrix(0.9996554,-0.0262506,0.0262506,0.9996554,80.828521,165.35874)"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\PendMusc.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\MetCostTechNote\Pictures\PendMusck.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
@@ -197,7 +176,7 @@
        sodipodi:ry="22.870426"
        d="m 371.28709,371.25229 a 19.654274,22.870426 0 1 1 -39.30855,0 19.654274,22.870426 0 1 1 39.30855,0 z"
        transform="matrix(0.13187784,0,0,0.11333253,258.31538,417.27001)"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\PendMusc.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\MetCostTechNote\Pictures\PendMusck.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
@@ -213,7 +192,7 @@
        sodipodi:end="6.2831853"
        sodipodi:open="true"
        transform="matrix(8.061253,0,0,1.5029453,-2601.9554,-128.21477)"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\PendMusc.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\MetCostTechNote\Pictures\PendMusck.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <flowRoot
@@ -233,7 +212,7 @@
        height="2.4748738"
        x="268.44873"
        y="467.92325"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\PendMusc.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\MetCostTechNote\Pictures\PendMusck.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <flowRoot
@@ -248,69 +227,109 @@
            y="406.61218" /></flowRegion><flowPara
          id="flowPara3847" /></flowRoot>    <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 45.998275,471.84469 18.22487,30.73214"
-       id="path3765-17"
+       d="m 70.988604,451.75553 18.22487,30.73214"
+       id="path3765-43"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\Pendulum.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\Montreal\PendMuscCocon2.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 60.185085,471.84469 18.22487,30.73214"
-       id="path3765-1-4"
+       d="m 85.175414,451.75553 18.224866,30.73214"
+       id="path3765-1-1"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\Pendulum.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\Montreal\PendMuscCocon2.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 74.371915,471.84469 18.22487,30.73214"
-       id="path3765-7-0"
+       d="m 99.362244,451.75553 18.224866,30.73214"
+       id="path3765-7-2"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\Pendulum.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\Montreal\PendMuscCocon2.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 88.558705,471.84469 18.224865,30.73214"
-       id="path3765-4-9"
+       d="m 113.54903,451.75553 18.22487,30.73214"
+       id="path3765-4-3"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\Pendulum.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\Montreal\PendMuscCocon2.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 102.74552,471.84469 18.22487,30.73214"
-       id="path3765-0-4"
+       d="m 127.73585,451.75553 18.22487,30.73214"
+       id="path3765-0-3"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\Pendulum.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\Montreal\PendMuscCocon2.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 116.93233,471.84469 18.22487,30.73214"
-       id="path3765-9-88"
+       d="m 141.92266,451.75553 18.22487,30.73214"
+       id="path3765-9-4"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\Pendulum.png"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\Montreal\PendMuscCocon2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g3835-1"
+       transform="translate(-202.78666,-13.66225)"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\Montreal\PendMuscCocon2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         transform="matrix(1.3236661,0.71401112,-0.23918863,0.4434187,39.320181,94.792028)"
+         d="m 262.17214,373.57504 c 0,12.92703 -2.18478,23.40645 -4.87984,23.40645 -2.69507,0 -4.87985,-10.47942 -4.87985,-23.40645 0,-12.92702 2.18478,-23.40645 4.87985,-23.40645 2.69506,0 4.87984,10.47943 4.87984,23.40645 z"
+         sodipodi:ry="23.406452"
+         sodipodi:rx="4.8798437"
+         sodipodi:cy="373.57504"
+         sodipodi:cx="257.2923"
+         id="path3813-1"
+         style="fill:#7f003d;fill-opacity:1;stroke:none"
+         sodipodi:type="arc" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3833-3"
+         d="m 305.13902,419.53282 -26.36745,45.30703"
+         style="fill:none;stroke:#7f003d;stroke-width:1.07647789px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <path
+       sodipodi:type="arc"
+       style="fill:#7f003d;fill-opacity:1;stroke:none"
+       id="path3813-8-7"
+       sodipodi:cx="257.2923"
+       sodipodi:cy="373.57504"
+       sodipodi:rx="4.5079708"
+       sodipodi:ry="23.406452"
+       d="m 261.80027,373.57504 a 4.5079708,23.406452 0 1 1 -9.01594,0 4.5079708,23.406452 0 1 1 9.01594,0 z"
+       transform="matrix(-1.3236661,0.71401112,0.23918863,0.4434187,376.43574,80.562758)"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\Montreal\PendMuscCocon2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#7f003d;stroke-width:1.07647789px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 110.6169,405.30355 26.36745,45.30703"
+       id="path3833-2-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\Montreal\PendMuscCocon2.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:1.18004453;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="rect3786-1"
+       id="rect3786-2"
        width="8.3199558"
        height="118.31996"
-       x="240.31378"
-       y="284.74823"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\Pendulum.png"
+       x="102.43172"
+       y="326.32675"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\Montreal\PendMuscCocon2.png"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:transform-center-y="-52.003465"
-       transform="matrix(0.9309366,0.36518085,-0.36518085,0.9309366,0,0)"
-       inkscape:transform-center-x="-20.399524" />
+       inkscape:export-ydpi="90" />
     <path
        sodipodi:type="star"
        style="fill:none;stroke:#000000;stroke-opacity:1"
-       id="path3012-1"
+       id="path3012-7"
        sodipodi:sides="3"
        sodipodi:cx="216.02112"
        sodipodi:cy="301.06122"
@@ -324,47 +343,130 @@
        d="m 228.74904,308.83939 -25.82798,-0.64455 13.47219,-22.04541 z"
        inkscape:transform-center-x="-0.0097177148"
        inkscape:transform-center-y="-3.720689"
-       transform="matrix(0.9996554,-0.0262506,0.0262506,0.9996554,-142.25808,167.32244)"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\Pendulum.png"
+       transform="matrix(0.9996554,-0.0262506,0.0262506,0.9996554,-117.26775,147.23328)"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\Montreal\PendMuscCocon2.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
        sodipodi:type="arc"
        style="fill:#000000;fill-opacity:1;stroke:none"
-       id="path3757-5"
+       id="path3757-7"
        sodipodi:cx="351.63281"
        sodipodi:cy="371.25229"
        sodipodi:rx="19.654274"
        sodipodi:ry="22.870426"
        d="m 371.28709,371.25229 a 19.654274,22.870426 0 1 1 -39.30855,0 19.654274,22.870426 0 1 1 39.30855,0 z"
-       transform="matrix(0.13187784,0,0,0.11333253,35.228785,419.23371)"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\Pendulum.png"
+       transform="matrix(0.13187784,0,0,0.11333253,60.219114,399.14455)"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\Montreal\PendMuscCocon2.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
        sodipodi:type="arc"
        style="fill:none;stroke:#464646;stroke-width:0.43094158;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="path3863-2"
+       id="path3863-9"
        sodipodi:cx="361.1026"
        sodipodi:cy="396.80283"
        sodipodi:rx="1.9654273"
        sodipodi:ry="10.541838"
-       d="m 361.44389,386.42114 a 1.9654273,10.541838 0 0 1 1.62414,10.38169"
-       sodipodi:start="4.8869219"
+       d="m 361.1026,386.26099 a 1.9654273,10.541838 0 0 1 1.96543,10.54184"
+       sodipodi:start="4.712389"
        sodipodi:end="6.2831853"
        sodipodi:open="true"
-       transform="matrix(8.061253,0,0,1.5029453,-2825.042,-126.25107)"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\Pendulum.png"
+       transform="matrix(8.061253,0,0,1.5029453,-2800.0516,-146.34023)"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\Montreal\PendMuscCocon2.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <rect
        style="fill:#000000;fill-opacity:1;stroke:none"
-       id="rect3784-76"
+       id="rect3784-3"
        width="72.478447"
        height="2.4748738"
-       x="45.362118"
-       y="469.88696"
-       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\BANCOM\Pendulum.png"
+       x="70.352463"
+       y="449.79779"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\Montreal\PendMuscCocon2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3033"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:14px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3035"><rect
+           id="rect3037"
+           width="109.60155"
+           height="73.539101"
+           x="328.80466"
+           y="411.72345" /></flowRegion><flowPara
+         id="flowPara3039"></flowPara></flowRoot>    <image
+       y="441.80545"
+       x="333.03131"
+       id="image3104"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAABTCAIAAACkvEaBAAAAA3NCSVQICAjb4U/gAAAC2ElEQVR4
+nO2bMXLCQAxFTSZHISmYnIAbJDRUHAGuk5ojUNEAN+AEmRTAXTZNQlJYX9aXhDeMfwv2+llfa2tX
+HpVSmv+vh74vIEYDRk0aMGrSgFGTBoyaFIVxWI1krQ5Bo8gqPu2XhrGWe+dooniM8/uUum8pLBwG
+i5CGQmBAH03fz53+9/ePPWDI19Z+XYglkMSEIXsJuQQ5MMpdBgzxxup3FcQkJiSdMRwQ8PAYkI4Y
+Tgh4igiQThiyuy0XkJkjHTDA8LbREYczIDoGMIP5HqLp1xUQFSOSIu8xomBE+wC/xfABwRjxbk7i
+gPXGZbc5ij++PI/RsYLGswXgWG/JygRhQIrp5IkacPz8An5lOQAGpCCD0TTN0wTZiuSQMTAFLxyO
+5uN0IU4qY5w/EQXrqUYLx3GzIzhEjMN2jY6jPaWG4/h5tp9TwricPuwn6ygcDspWEga2lMdTqhhb
+CRiZwdBcxUjAUILhSQ1dRHb0svipJAeRHe0YmqcyU6NhwtGOoXmqOtW5om52VSuGOk85Mzx+qqoz
+GmY9Uket30bwVeXmupNoDBg1icNwLvJ5d3miMKoTh8FVmlfFvyTcczQSCgKbzG8JXDSoevmqhJqs
+HUMrCJJlrwPI3HDmuCL7m2c7Rm5yaBMVUZQJ0dBc5UmOjDJAwOhzrmIqZCk3Xue4NceRHBmrLmKK
+K7biXaV5ajl/tZ9UxMD7KY5wpKxHyhNuxopxowZjupgxZT54bijpQYZD2W/gKODjD3Nw4cDBYCmU
+XsP4fVPYK8ZXY/hlBOc5YSu4+UPNUd/y3D7z1nhar5veMwKNZbNBWstIp0akoNF7bkQqMS1dgOJG
+bWEBdzIVwtIy6YlIWGeZJEsDKzvPxLZktcrWTmx/HN6iCbcQzd3awuVvWHBzd2ybOtVqb/raAaL2
+ilEKjxKPUIrn+41SrEvjeV+hODF+lNUJ2VmjMnyhXI8GjJp0JxhfgMMV28QoQ1gAAAAASUVORK5C
+YII=
+"
+       height="18.085457"
+       width="14.381206"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\MetCostTechNote\Pictures\PendMusck.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#464646;stroke-width:7.62756783;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path3109"
+       sodipodi:cx="366.28131"
+       sodipodi:cy="527.33539"
+       sodipodi:rx="34.648232"
+       sodipodi:ry="90.156113"
+       d="m 337.52285,477.05126 a 34.648232,90.156113 0 0 1 51.12244,-18.57673"
+       sodipodi:start="3.7332593"
+       sodipodi:end="5.4140117"
+       transform="matrix(0.31722122,0,0,0.12191247,210.59163,396.02099)"
+       sodipodi:open="true"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\MetCostTechNote\Pictures\PendMusck.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       transform="matrix(-1,0,0,1,613.85219,3.8961885)"
+       id="g3835-8"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\MetCostTechNote\Pictures\PendMusck.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         transform="matrix(1.3236661,0.71401112,-0.23918863,0.4434187,39.320181,94.792028)"
+         d="m 259.4364,373.57504 c 0,12.92703 -0.95995,23.40645 -2.1441,23.40645 -1.18416,0 -2.14411,-10.47942 -2.14411,-23.40645 0,-12.92702 0.95995,-23.40645 2.14411,-23.40645 1.18415,0 2.1441,10.47943 2.1441,23.40645 z"
+         sodipodi:ry="23.406452"
+         sodipodi:rx="2.1441026"
+         sodipodi:cy="373.57504"
+         sodipodi:cx="257.2923"
+         id="path3813-8"
+         style="fill:#7f003d;fill-opacity:1;stroke:none"
+         sodipodi:type="arc" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3833-2"
+         d="m 305.13902,419.53282 -26.36745,45.30703"
+         style="fill:none;stroke:#7f003d;stroke-width:1.07647789px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <rect
+       style="fill:#ffffff;stroke:none"
+       id="rect3879"
+       width="91.433739"
+       height="22.000002"
+       x="272"
+       y="480.86218"
+       inkscape:export-filename="C:\Users\2625262\Documents\Conferences Papers\2016\MetCostTechNote\Pictures\PendMusck.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
   </g>

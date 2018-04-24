@@ -6,40 +6,40 @@ if strcmp(params.solver, 'IPOPT')
     funcs.constraints = @(X) confun(X, params);
     funcs.jacobian    = @(X) conjac(X, params);
     funcs.jacobianstructure = @() conjacstructure(params);
-%     funcs.hessian = @(X,sigma,lambda) objhess(X,sigma,lambda,params);
-%     funcs.hessianstructure = @() hessstructure(L, U, params);
     options.lb = L;
     options.ub = U;
     options.cl = zeros(params.ncon,1);
     options.cu = zeros(params.ncon,1);
-    options.cl(end) = -.1;
-%     if params.asat
-%         options.cu = [zeros(params.nconeq,1); 100*ones(params.nconineq,1)];	
-%     else
-%         options.cu = [zeros(params.nconeq,1); 1*ones(params.nconineq,1)];	
-%     end
-    options.cu(end) = .1;
-    options.ipopt.max_iter = 2000;%00;
+%     options.cu(end) = 0.1;
+%     options.cl(end) = -0.1;
+    options.ipopt.max_iter = 1000;%00;
     options.ipopt.hessian_approximation = 'limited-memory';
-%     options.ipopt.limited_memory_max_history = 100;
-%     options.ipopt.limited_memory_max_skipping = 1;
-%     options.ipopt.recalc_y = 'no';
-%     options.ipopt.first_hessian_perturbation = 1e-9;
     options.ipopt.mu_strategy = 'adaptive';
     options.ipopt.tol = 1e-2;
     options.ipopt.linear_solver = 'mumps'; 
-    options.ipopt.constr_viol_tol = 1e-5;
+    options.ipopt.constr_viol_tol = 1e-4;
     options.ipopt.dual_inf_tol = 1e-2;
-    options.ipopt.compl_inf_tol = 1e-5;
+    options.ipopt.compl_inf_tol = 1e-4;
     options.ipopt.print_level = 5;
     options.ipopt.bound_frac = 0.01;
     options.ipopt.bound_push = options.ipopt.bound_frac;
-%     options.ipopt.slack_bound_frac = 1e-9;
-%     options.ipopt.slack_bound_push = options.ipopt.slack_bound_frac;
-%     options.ipopt.mu_init = 1e-9;
+    if params.warmstart
+        options.ipopt.warm_start_init_point = 'yes';
+        options.ipopt.warm_start_bound_frac = 1e-16;
+        options.ipopt.warm_start_bound_push = 1e-16;
+        options.ipopt.warm_start_mult_bound_push = 1e-16;
+        options.ipopt.warm_start_slack_bound_frac = 1e-16;
+        options.ipopt.warm_start_slack_bound_push = 1e-16;
+        options.zl = params.zl;
+        options.zu = params.zu;
+        options.lambda = params.lambda;
+    end
     [X, info] = ipopt(X0,funcs,options);
     disp(['IPOPT status: ' num2str(info.status)]);
     result.info = info.status;
+    result.zl = info.zl;
+    result.zu = info.zu;
+    result.lambda = info.lambda;
     result.X = X;
     result.params = params;
     result.obj = objfun(X, params);
@@ -51,11 +51,10 @@ else
     snprint   ([params.snoptname '.out']);
     snsummary ([params.snoptname '.sum']);
     cl = zeros(params.ncon,1);
-    if params.asat
-        cu = [zeros(params.nconeq,1); 100*ones(params.nconineq,1)];	
-    else
-        cu = [zeros(params.nconeq,1); 1*ones(params.nconineq,1)];	
-    end
+    cu = zeros(params.ncon,1);
+    cl(end) = -.1;
+    cu(end) = .1;
+
     FL = [-inf;cl];
     FU = [inf;cu];
     xmul = zeros(size(L));
